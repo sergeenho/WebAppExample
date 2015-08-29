@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Employees List/Add</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <div>
+                <h3>Employees List</h3>
+                <div>
+                    <p:dataTable id="employees_list" value="#{EmployeeBean.employees}" var="employee_list"
+                                 paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                                 paginator="true" rows="10">
+                        <p:column  width="10%">
+                            <f:facet name="header">ID</f:facet>
+                            <h:outputText value="#{employee_list.id}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">Name</f:facet>
+                            <h:outputText value="#{employee_list.name}"/>
+                        </p:column>
+                        <p:column width="30%">
+                            <f:facet name="header">Email</f:facet>
+                            <h:outputText value="#{employee_list.email}"/>
+                        </p:column>
+                        <p:column width="30%">
+                            <f:facet name="header">Company</f:facet>
+                            <h:outputText value="#{employee_list.company.name}"/>
+                        </p:column>
+                    </p:dataTable>
+                </div>
+                <div>
+                    <h3>Add Employee</h3>   
+                    <div>
+                        <label for="projects">Company</label>
+                        <h:selectOneMenu value="#{EmployeeBean.employee.company.id}" style="width: 250px">
+                            <f:selectItem itemLabel="Select..." itemValue="-1" />
+                            <f:selectItems value="#{EmployeeBean.companies}" var="company" itemValue="#{company.id}" itemLabel="#{company.name}" />
+                        </h:selectOneMenu>
+                    </div>
+
+                    <div>
+                        <label for="name"><font size="4" style="font-weight: bold" color="red">*</font>Name</label>
+                        <h:inputText id="name" size="30" maxlength="50" value="#{EmployeeBean.employee.name}" immediate="true" style="background: #FAFFBD"/>
+                    </div>
+
+                    <div>
+                        <label for="phone"><font size="4" style="font-weight: bold" color="red">*</font>Phone</label>
+                        <h:inputText id="phone" size="30" maxlength="50" value="#{EmployeeBean.employee.phone}" immediate="true" style="background: #FAFFBD"/>
+                    </div>
+
+                    <div>
+                        <label for="email"><font size="4" style="font-weight: bold" color="red">*</font>Email</label>
+                        <h:inputText id="email" size="30" maxlength="50" value="#{EmployeeBean.employee.email}" immediate="true" style="background: #FAFFBD"/>
+                    </div>
+
+                    <br/>
+                    <p:commandButton id="back" value="Back" action="back" icon="ui-icon-cancel"/>
+                    <p:commandButton id="addEmployee" value="Add Employee" action="#{EmployeeBean.addEmployee()}" icon="ui-icon-arrowreturnthick-1-n" ajax="false"/>
+                </div>
+            </div>
+        </h:form>
+    </h:body>
+</html>

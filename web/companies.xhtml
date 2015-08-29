@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Company List/Add</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <div>
+                <h3>Company List</h3>
+                <div>
+                    <p:dataTable id="companies_list" value="#{CompanyBean.companies}" var="company_list"
+                                 paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                                 paginator="true" rows="10">
+                        <p:column  width="10%">
+                            <f:facet name="header">ID</f:facet>
+                            <h:outputText value="#{company_list.id}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">Name</f:facet>
+                            <h:outputText value="#{company_list.name}"/>
+                        </p:column>
+                    </p:dataTable>
+                </div>
+                <div>
+                    <h3>Add Company</h3>
+
+                    <div>
+                        <label for="name"><font size="4" style="font-weight: bold" color="red">*</font>Name</label>
+                        <h:inputText id="name" size="30" maxlength="50" value="#{CompanyBean.company.name}" immediate="true" style="background: #FAFFBD"/>
+                    </div>
+
+                    <br/>
+                    <p:commandButton id="back" value="Back" action="back" style="pure-button pure-button-primary" icon="ui-icon-cancel"/>
+                    <p:commandButton id="addCompany" value="Add Company" action="#{CompanyBean.addCompany()}" style="pure-button pure-button-primary" icon="ui-icon-arrowreturnthick-1-n" ajax="false"/>
+                </div>
+            </div>
+        </h:form>
+    </h:body>
+</html>
