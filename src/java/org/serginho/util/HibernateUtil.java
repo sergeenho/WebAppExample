@@ -10,7 +10,10 @@ import org.hibernate.cfg.Configuration;
 
 /**
  *
- * @author sergio.sa
+ * @author Sergio Sa Filho
+ * @email code@serginho.org
+ * @website www.Serginho.org
+ * 
  */
 public class HibernateUtil {
     private static SessionFactory instance = null;

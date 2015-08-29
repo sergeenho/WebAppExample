@@ -16,7 +16,10 @@ import org.serginho.pojo.Company;
 
 /**
  *
- * @author sergio.sa
+ * @author Sergio Sa Filho
+ * @email code@serginho.org
+ * @website www.Serginho.org
+ * 
  */
 @ManagedBean(name="CompanyBean")
 @SessionScoped

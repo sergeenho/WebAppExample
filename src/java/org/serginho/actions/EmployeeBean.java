@@ -18,7 +18,10 @@ import org.serginho.pojo.Employee;
 
 /**
  *
- * @author sergio.sa
+ * @author Sergio Sa Filho
+ * @email code@serginho.org
+ * @website www.Serginho.org
+ * 
  */
 @ManagedBean(name="EmployeeBean")
 @SessionScoped
