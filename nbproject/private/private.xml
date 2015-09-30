@@ -4,11 +4,8 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/svn/WebAppExample/web/employees.xhtml</file>
-            <file>file:/C:/svn/WebAppExample/src/java/org/serginho/dao/EmployeeDAO.java</file>
-            <file>file:/C:/svn/WebAppExample/src/java/org/serginho/pojo/Company.hbm.xml</file>
-            <file>file:/C:/svn/WebAppExample/src/java/org/serginho/pojo/Employee.hbm.xml</file>
-            <file>file:/C:/svn/WebAppExample/src/java/org/serginho/dao/CompanyDAO.java</file>
-            <file>file:/C:/svn/WebAppExample/src/java/org/serginho/dao/GenericDAO.java</file>
+            <file>file:/C:/svn/WebAppExample/src/java/hibernate.cfg.xml</file>
+            <file>file:/C:/svn/WebAppExample/src/java/hibernate.reveng.xml</file>
         </group>
     </open-files>
 </project-private>
